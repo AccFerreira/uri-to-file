@@ -30,8 +30,13 @@ android {
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
+
     defaultConfig {
         minSdkVersion 16
+    }
+
+    if (gradle.gradleVersion >= "8.0") {
+        namespace "com.studiosol.uri_to_file"
     }
 }
 
