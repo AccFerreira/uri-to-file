@@ -36,7 +36,7 @@ android {
     }
 
     if (gradle.gradleVersion >= "8.0") {
-        namespace "com.studiosol.uri_to_file"
+        namespace "in.lazymanstudios.uri_to_file"
     }
 }
 

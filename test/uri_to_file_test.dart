@@ -10,14 +10,12 @@ import 'package:uri_to_file/uri_to_file.dart';
 /// flutter test test\uri_to_file_test.dart
 void main() {
   /// Method Channel Helper
-  const MethodChannel channel =
-      MethodChannel('in.lazymanstudios.uritofile/helper');
+  const MethodChannel channel = MethodChannel('in.lazymanstudios.uritofile/helper');
 
   TestWidgetsFlutterBinding.ensureInitialized();
 
   /// Base sample directory path
-  String samplePath =
-      'test${Platform.pathSeparator}sample${Platform.pathSeparator}';
+  String samplePath = 'test${Platform.pathSeparator}sample${Platform.pathSeparator}';
 
   setUp(() {
     /// To create sample directory

@@ -4,8 +4,7 @@ import 'package:flutter/services.dart';
 import 'model/custom_exception/uri_io_exception.dart';
 
 /// Method Channel Helper
-const MethodChannel _methodChannel =
-    const MethodChannel('in.lazymanstudios.uritofile/helper');
+const MethodChannel _methodChannel = const MethodChannel('in.lazymanstudios.uritofile/helper');
 
 /// Error code for PlatformException
 const String _URI_NOT_SUPPORTED = 'URI_NOT_SUPPORTED';
@@ -55,15 +54,13 @@ Future<File> toFile(String uriString) async {
   Uri uri = Uri.parse(uriString);
   if (Platform.isAndroid && uri.isScheme('content')) {
     try {
-      String filepath = await _methodChannel
-          .invokeMethod("fromUri", {"uriString": uriString});
+      String filepath = await _methodChannel.invokeMethod("fromUri", {"uriString": uriString});
       return File(filepath);
     } on PlatformException catch (e) {
       switch (e.code) {
         case _URI_NOT_SUPPORTED:
           {
-            throw UnsupportedError(
-                'Cannot extract a file path from a ${uri.scheme} URI');
+            throw UnsupportedError('Cannot extract a file path from a ${uri.scheme} URI');
           }
         case _IO_EXCEPTION:
           {
