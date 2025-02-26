@@ -1,1 +1,11 @@
-rootProject.name = 'uri_to_file'
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+rootProject.name = "uri-to-file"
+include 'uri-to-file'
+
